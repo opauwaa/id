@@ -365,13 +365,13 @@ from apscheduler.schedulers.background import BackgroundScheduler
 
 # подборка статей будет обновляться каждые 1 минут для этого запускается планировщик событий
 scheduler = BackgroundScheduler()
-scheduler.add_job(func=russ_n_port, trigger="interval", minutes=1)
+scheduler.add_job(func=russ_n_port, trigger="interval", minutes=60)
 scheduler.start()
 atexit.register(lambda: scheduler.shutdown())
 
 if __name__ == '__main__':
-    if os.path.exists('db/stories.db'):
-        os.remove('db/stories.db')
+    #if os.path.exists('db/stories.db'):
+    #   os.remove('db/stories.db')
     db_session.global_init("db/stories.db")
     port = int(os.environ.get("PORT", 5000))
     app.run(host='0.0.0.0', port=port)

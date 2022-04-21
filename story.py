@@ -8,9 +8,9 @@ def story2file(lang='russian'):
     for n, i in enumerate(a['abstracts']):
         j = spacy_proc(i['description'], lang)
         k = reverso_proc(j[1], lang)
-        print(n)
-        print(j)
-        print(k)
+        #print(n)
+        #print(j)
+        #print(k)
         if j and k:
             i['verb'] = j[0]
             i['infinitive'] = j[1]

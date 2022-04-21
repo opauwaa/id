@@ -1,1 +1,1 @@
-web: python main_16.py
+web: python main_16g.py
